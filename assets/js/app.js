@@ -25,7 +25,7 @@ const SERVICES_DATA = [
 {icon:'box',title:'Gudang',desc:'Jaga kelembapan optimal untuk mutu bahan baku dan inventaris barang.'},
 {icon:'school',title:'Sekolah / Kampus',desc:'Ciptakan lingkungan belajar sejuk mendukung fokus para siswa.'},
 {icon:'project',title:'Site Office / Proyek',desc:'Site office kontainer direksi keet proyek tetap dingin di lapangan.'},
-{icon:'office',title:'Tempat Usaha / Ruko',desc:'Buat pelanggan toko, ruko, cafe, atau butik Anda betah berbelanja.'}
+{icon:'store',title:'Tempat Usaha / Ruko',desc:'Buat pelanggan toko, ruko, cafe, atau butik Anda betah berbelanja.'}
 ];
 const WORKFLOW_DATA = [
 {title:'Konsultasi',desc:'Hubungi tim kami untuk konsultasi kapasitas AC (PK) yang sesuai.'},

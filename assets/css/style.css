@@ -118,7 +118,7 @@ a:focus-visible,
 
 .section-header {
   text-align: center;
-  max-width: 700px;
+  max-width: 640px;
   margin: 0 auto clamp(4rem, 8vw, 6rem);
 }
 
@@ -286,8 +286,8 @@ a:focus-visible,
 
 /* Hero Section */
 .hero {
-  padding-top: calc(84px + clamp(5rem, 10vw, 10rem));
-  padding-bottom: clamp(5rem, 10vw, 10rem);
+  padding-top: calc(84px + clamp(4rem, 8vw, 8rem));
+  padding-bottom: clamp(4rem, 8vw, 8rem);
   position: relative;
   overflow: hidden;
 }
@@ -343,6 +343,38 @@ a:focus-visible,
   gap: 1.25rem;
 }
 
+/* Hero Social Proof Trust Bar */
+.hero-trust-bar {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-num {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.trust-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.2rem;
+}
+
 .hero-img-wrapper {
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -365,7 +397,7 @@ a:focus-visible,
 /* Redesigned Minimalist Cards & Grids */
 .card-grid {
   display: grid;
-  gap: 1.75rem;
+  gap: 2rem;
 }
 
 .card {
@@ -495,7 +527,7 @@ a:focus-visible,
 
 .pricing-card.featured {
   border-color: var(--primary);
-  border-width: 2px;
+  border-width: 1px;
   box-shadow: var(--shadow-md);
 }
 
@@ -703,44 +735,32 @@ a:focus-visible,
   padding-top: 1.25rem;
 }
 
-/* High Conversion CTA Section */
+/* High Conversion CTA Section - White Dominant Light Surface */
 .cta-banner {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: clamp(5rem, 8vw, 8rem) clamp(2rem, 5vw, 5rem);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: clamp(4.5rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
   border-radius: var(--radius-lg);
   text-align: center;
-  box-shadow: var(--shadow-button);
+  box-shadow: var(--shadow-sm);
 }
 
 .cta-title {
-  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
   font-weight: 800;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 1.25rem;
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
 .cta-desc {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto 2.5rem;
   line-height: 1.5;
-}
-
-.btn-cta-white {
-  background-color: var(--white);
-  color: var(--primary);
-  font-weight: 700;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.btn-cta-white:hover {
-  background-color: var(--surface-gray);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 }
 
 /* Workflow Timeline Layout */
@@ -941,12 +961,15 @@ a:focus-visible,
     grid-template-columns: repeat(2, 1fr);
   }
   
+  /* 768px Tablet Pricing Grid Fix - Stack Cleanly without stretching 3rd card */
   .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 540px;
+    margin: 0 auto;
   }
   
   .pricing-card.featured {
-    grid-column: span 2;
+    grid-column: span 1;
   }
   
   .hero .container {
@@ -967,6 +990,10 @@ a:focus-visible,
     justify-content: center;
   }
   
+  .hero-trust-bar {
+    justify-content: center;
+  }
+  
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -976,7 +1003,7 @@ a:focus-visible,
   }
 }
 
-/* Small Desktop Breakpoint (1024px and up) */
+/* Desktop Breakpoint (1024px and up) */
 @media (min-width: 1024px) {
   .navbar {
     height: 84px;
@@ -1023,6 +1050,10 @@ a:focus-visible,
     justify-content: flex-start;
   }
   
+  .hero-trust-bar {
+    justify-content: flex-start;
+  }
+  
   .benefits-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1038,6 +1069,7 @@ a:focus-visible,
   
   .pricing-grid {
     grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
   }
   
   .pricing-card.featured {
@@ -1166,5 +1198,17 @@ a:focus-visible,
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-trust-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .pricing-card {
+    padding: 2.5rem 1.5rem 2rem;
   }
 }
