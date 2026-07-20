@@ -284,7 +284,7 @@ a:focus-visible,
   transition: transform var(--transition-normal), opacity var(--transition-normal);
 }
 
-/* Hero Section */
+/* Hero Section - Strict Left Alignment */
 .hero {
   padding-top: calc(84px + clamp(4rem, 8vw, 8rem));
   padding-bottom: clamp(4rem, 8vw, 8rem);
@@ -301,6 +301,7 @@ a:focus-visible,
 
 .hero-content {
   max-width: 580px;
+  text-align: left;
 }
 
 .hero-tag {
@@ -315,6 +316,8 @@ a:focus-visible,
   border-radius: var(--radius-full);
   margin-bottom: 1.75rem;
   border: 1px solid var(--border);
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .hero-title {
@@ -324,6 +327,7 @@ a:focus-visible,
   letter-spacing: -0.04em;
   color: var(--text);
   margin-bottom: 1.75rem;
+  text-align: left;
 }
 
 .hero-title span {
@@ -335,18 +339,21 @@ a:focus-visible,
   color: var(--text-muted);
   margin-bottom: 2.5rem;
   line-height: 1.5;
+  text-align: left;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 1.25rem;
 }
 
-/* Hero Social Proof Trust Bar */
+/* Hero Social Proof Trust Bar - Left Aligned with Equal Spacing */
 .hero-trust-bar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 2.5rem;
   margin-top: 2.5rem;
   padding-top: 2rem;
@@ -356,6 +363,8 @@ a:focus-visible,
 .trust-item {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .trust-num {
@@ -961,7 +970,6 @@ a:focus-visible,
     grid-template-columns: repeat(2, 1fr);
   }
   
-  /* 768px Tablet Pricing Grid Fix - Stack Cleanly without stretching 3rd card */
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 540px;
@@ -979,19 +987,20 @@ a:focus-visible,
   
   .hero-content {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
   
   .hero-tag {
-    margin: 0 auto 1.75rem;
+    margin-left: 0;
+    margin-right: auto;
   }
   
   .hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
   
   .hero-trust-bar {
-    justify-content: center;
+    justify-content: flex-start;
   }
   
   .footer-grid {
