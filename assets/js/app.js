@@ -1,12 +1,11 @@
 /**
- * Sewa AC Cikarang - Phase 2 Logic
- * Sticky navbar scrolled states, accessible mobile navigation, and viewport scroll reveal animations.
+ * Sewa AC Cikarang - Phase 1 Logic
+ * Sticky navbar scrolled states and accessible mobile navigation.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbarScroll();
   initMobileMenu();
-  initScrollReveal();
 });
 
 /**
@@ -55,35 +54,4 @@ function initMobileMenu() {
 
   hamburger.addEventListener('click', toggleMenu);
   links.forEach(link => link.addEventListener('click', closeMenu));
-}
-
-/**
- * Triggers fade-up animations as components enter the viewport
- */
-function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.reveal');
-  
-  if (!('IntersectionObserver' in window)) {
-    // Fallback: immediately show elements if IntersectionObserver is not supported
-    revealElements.forEach(el => el.classList.add('reveal-active'));
-    return;
-  }
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-active');
-        // Unobserve after showing the animation to avoid recalculations
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  revealElements.forEach(el => observer.observe(el));
 }
