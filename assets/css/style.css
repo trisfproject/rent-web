@@ -537,7 +537,7 @@ a:focus-visible,
   background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 4rem 2.75rem 3.5rem;
+  padding: 2.75rem 2.25rem 2.25rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -564,76 +564,68 @@ a:focus-visible,
 
 .pricing-badge {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 1.25rem;
+  right: 1.25rem;
   background-color: var(--primary);
   color: var(--white);
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 0.3rem 0.9rem;
+  padding: 0.25rem 0.85rem;
   border-radius: var(--radius-full);
 }
 
 .pricing-header h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   letter-spacing: -0.015em;
 }
 
 .pricing-price {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--primary);
-  margin: 1.5rem 0;
+  margin: 1rem 0 0.5rem;
   letter-spacing: -0.035em;
 }
 
 .pricing-price span {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-muted);
 }
 
 .pricing-desc {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   color: var(--text-muted);
-  margin-bottom: 2.25rem;
-  min-height: 2.8rem;
-  line-height: 1.55;
+  margin-bottom: 1.5rem;
+  min-height: 2.6rem;
+  line-height: 1.6;
 }
 
 .pricing-includes {
   border-top: 1px solid var(--border);
-  padding-top: 2.25rem;
-  margin-bottom: 2.75rem;
+  padding-top: 1.5rem;
+  margin-bottom: 1.75rem;
   text-align: left;
-}
-
-.pricing-includes-heading {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 1.25rem;
 }
 
 .pricing-features {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  margin-bottom: 1.5rem;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
 }
 
 .pricing-feature {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.95rem;
+  gap: 0.65rem;
+  font-size: 0.875rem;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .pricing-feature svg {
@@ -642,9 +634,11 @@ a:focus-visible,
 }
 
 .pricing-footnote {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  font-style: italic;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
 }
 
 .pricing-cta {
