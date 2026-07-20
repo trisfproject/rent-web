@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rajasevaac-cikarang.com/sitemap.xml
+Sitemap: https://sewaac-cikarang.com/sitemap.xml

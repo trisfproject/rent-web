@@ -1,5 +1,5 @@
 /**
- * Raja Sewa AC Cikarang - Phase 1 Logic
+ * Sewa AC Cikarang - Phase 1 Logic
  * Sticky navbar scrolled states and accessible mobile navigation.
  */
 
