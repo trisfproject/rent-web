@@ -289,21 +289,21 @@ a:focus-visible,
 
 /* Hero Section - Strict Left Alignment */
 .hero {
-  padding-top: calc(84px + clamp(4.5rem, 9vw, 9rem));
-  padding-bottom: clamp(4.5rem, 9vw, 9rem);
+  padding-top: calc(84px + clamp(2.5rem, 5vw, 4.5rem));
+  padding-bottom: clamp(3rem, 6vw, 5rem);
   position: relative;
   overflow: hidden;
 }
 
 .hero .container {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 5rem;
+  gap: 3.5rem;
 }
 
 .hero-content {
-  max-width: 580px;
+  max-width: 540px;
   text-align: left;
 }
 
@@ -313,23 +313,25 @@ a:focus-visible,
   gap: 0.5rem;
   background-color: var(--surface);
   color: var(--primary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  padding: 0.4rem 1.1rem;
+  padding: 0.35rem 0.95rem;
   border-radius: var(--radius-full);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
   border: 1px solid var(--border);
   margin-left: 0;
   margin-right: auto;
+  max-width: 320px;
+  white-space: nowrap;
 }
 
 .hero-title {
-  font-size: clamp(3rem, 6vw, 4.25rem);
+  font-size: clamp(2.5rem, 5.2vw, 3.8rem);
   font-weight: 800;
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: -0.04em;
   color: var(--text);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
   text-align: left;
 }
 
@@ -338,18 +340,24 @@ a:focus-visible,
 }
 
 .hero-desc {
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  line-height: 1.55;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
   text-align: left;
+  max-width: 520px;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+.hero-actions .btn {
+  padding: 0.8rem 1.6rem;
+  font-size: 0.95rem;
 }
 
 /* Hero Social Proof Trust Bar - Left Aligned */
@@ -357,9 +365,9 @@ a:focus-visible,
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 2.75rem;
-  margin-top: 2.75rem;
-  padding-top: 2rem;
+  gap: 2.25rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
 
@@ -371,20 +379,20 @@ a:focus-visible,
 }
 
 .trust-num {
-  font-size: 1.4rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--primary);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.035em;
 }
 
 .trust-label {
-  font-size: 0.75rem;
+  font-size: 0.775rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 0.2rem;
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
 }
 
 .hero-img-wrapper {
