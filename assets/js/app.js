@@ -180,6 +180,7 @@ document.body.style.overflow = '';
 };
 hamburger.addEventListener('click', toggleMenu);
 links.forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 }
 function initScrollReveal() {
 const revealElements = document.querySelectorAll('.reveal');
