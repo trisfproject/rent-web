@@ -1,0 +1,16 @@
+{
+  "name": "Raja Sewa AC Cikarang",
+  "short_name": "Raja Sewa AC",
+  "description": "Layanan Sewa AC Bulanan Premium di Cikarang. Hubungi Kami untuk Rumah, Kantor, Proyek, & Gudang.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
