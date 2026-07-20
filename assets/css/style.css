@@ -87,7 +87,8 @@ button:focus-visible,
 a:focus-visible,
 .card:focus-visible,
 .map-placeholder:focus-visible,
-.pricing-card:focus-visible {
+.pricing-card:focus-visible,
+.faq-trigger:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
@@ -407,6 +408,65 @@ a:focus-visible,
   line-height: 1.5;
 }
 
+/* Gallery Section Layout */
+.gallery-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.gallery-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--surface-gray);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+.gallery-info {
+  padding: 1.5rem 1.25rem;
+}
+
+.gallery-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.gallery-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
 /* Pricing Card Grid Layout */
 .pricing-grid {
   display: grid;
@@ -582,6 +642,107 @@ a:focus-visible,
   color: var(--primary);
 }
 
+/* FAQ Accordion Section Layout */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-normal);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.faq-trigger:hover {
+  color: var(--primary);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  transition: transform var(--transition-normal), color var(--transition-normal);
+  color: var(--text-muted);
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.faq-trigger[aria-expanded="true"] {
+  color: var(--primary);
+}
+
+.faq-panel {
+  padding: 0 2rem 1.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1.25rem;
+}
+
+/* High Conversion CTA Section */
+.cta-banner {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: clamp(5rem, 8vw, 8rem) clamp(2rem, 5vw, 5rem);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-button);
+}
+
+.cta-title {
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cta-desc {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.5;
+}
+
+.btn-cta-white {
+  background-color: var(--white);
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.btn-cta-white:hover {
+  background-color: var(--surface-gray);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
 /* Workflow Timeline Layout */
 .timeline-grid {
   display: grid;
@@ -641,7 +802,7 @@ a:focus-visible,
 /* Snappier Scroll Entrance Reveal styles */
 .reveal {
   opacity: 0;
-  transform: translateY(10px); /* Shorter translation */
+  transform: translateY(10px);
   transition: opacity 0.4s var(--transition-normal), transform 0.4s var(--transition-normal);
 }
 
@@ -776,6 +937,10 @@ a:focus-visible,
     grid-template-columns: repeat(2, 1fr);
   }
   
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -865,6 +1030,10 @@ a:focus-visible,
   .why-grid,
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
   
   .pricing-grid {
