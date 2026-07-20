@@ -55,103 +55,86 @@ const FAQ_DATA = [
 ];
 
 function renderPageContent() {
-    const bGrid = document.getElementById("benefits-grid");
-    if (bGrid) {
-        bGrid.innerHTML = BENEFITS_DATA.map(i => `<div class="card reveal" tabindex="0"><div class="card-icon-box" aria-hidden="true"><svg width="24" height="24"><use href="#icon-${i.icon}"/></svg></div><h3 class="card-title">${i.title}</h3><p class="card-desc">${i.desc}</p></div>`).join("");
-    }
-    const wGrid = document.getElementById("why-grid");
-    if (wGrid) {
-        wGrid.innerHTML = WHY_US_DATA.map(i => `<div class="card reveal" tabindex="0"><div class="card-icon-box" aria-hidden="true"><svg width="22" height="22"><use href="#icon-${i.icon}"/></svg></div><h3 class="card-title">${i.title}</h3><p class="card-desc">${i.desc}</p></div>`).join("");
-    }
-    const sGrid = document.getElementById("services-grid");
-    if (sGrid) {
-        sGrid.innerHTML = SERVICES_DATA.map(i => `<div class="card reveal" tabindex="0"><div class="card-icon-box" aria-hidden="true"><svg width="24" height="24"><use href="#icon-${i.icon}"/></svg></div><h3 class="card-title">${i.title}</h3><p class="card-desc">${i.desc}</p></div>`).join("");
-    }
-    const tGrid = document.getElementById("timeline-grid");
-    if (tGrid) {
-        tGrid.innerHTML = WORKFLOW_DATA.map((i, idx) => `<div class="timeline-step reveal"><div class="timeline-number" aria-label="Langkah ${idx + 1}">${idx + 1}</div><div class="timeline-content"><h3 class="timeline-title">${i.title}</h3><p class="timeline-desc">${i.desc}</p></div></div>`).join("");
-    }
-    const faqContainer = document.getElementById("faq-accordion");
-    if (faqContainer) {
-        faqContainer.innerHTML = FAQ_DATA.map((i, idx) => `<div class="faq-item reveal"><button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-${idx}" id="faq-head-${idx}"><span>${i.q}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-panel" id="faq-ans-${idx}" aria-labelledby="faq-head-${idx}" hidden><div class="faq-content"><p>${i.a}</p></div></div></div>`).join("");
-    }
+    const mkCard = (i, w) => `<div class="card" tabindex="0"><div class="card-icon-box" aria-hidden="true"><svg width="${w}" height="${w}"><use href="#icon-${i.icon}"/></svg></div><h3 class="card-title">${i.title}</h3><p class="card-desc">${i.desc}</p></div>`;
+    const fill = (id, data, w) => { const el = document.getElementById(id); if (el) el.innerHTML = data.map(i => mkCard(i, w)).join(""); };
+    fill("benefits-grid", BENEFITS_DATA, 24);
+    fill("why-grid", WHY_US_DATA, 22);
+    fill("services-grid", SERVICES_DATA, 24);
+    const tg = document.getElementById("timeline-grid");
+    if (tg) tg.innerHTML = WORKFLOW_DATA.map((i, n) => `<div class="timeline-step"><div class="timeline-number" aria-label="Langkah ${n + 1}">${n + 1}</div><div class="timeline-content"><h3 class="timeline-title">${i.title}</h3><p class="timeline-desc">${i.desc}</p></div></div>`).join("");
+    const fq = document.getElementById("faq-accordion");
+    if (fq) fq.innerHTML = FAQ_DATA.map((i, n) => `<div class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-${n}" id="faq-head-${n}"><span>${i.q}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-panel" id="faq-ans-${n}" aria-labelledby="faq-head-${n}" hidden><div class="faq-content"><p>${i.a}</p></div></div></div>`).join("");
 }
 
 function initFaqAccordion() {
-    const accordion = document.getElementById("faq-accordion");
-    if (!accordion) return;
-    accordion.addEventListener("click", (e) => {
-        const trigger = e.target.closest(".faq-trigger");
-        if (!trigger) return;
-        const isExpanded = trigger.getAttribute("aria-expanded") === "true";
-        const panelId = trigger.getAttribute("aria-controls");
-        const panel = document.getElementById(panelId);
-        document.querySelectorAll(".faq-trigger").forEach(btn => {
-            btn.setAttribute("aria-expanded", "false");
-            const p = document.getElementById(btn.getAttribute("aria-controls"));
+    const acc = document.getElementById("faq-accordion");
+    if (!acc) return;
+    acc.addEventListener("click", (e) => {
+        const t = e.target.closest(".faq-trigger");
+        if (!t) return;
+        const wasOpen = t.getAttribute("aria-expanded") === "true";
+        const panel = document.getElementById(t.getAttribute("aria-controls"));
+        document.querySelectorAll(".faq-trigger").forEach(b => {
+            b.setAttribute("aria-expanded", "false");
+            const p = document.getElementById(b.getAttribute("aria-controls"));
             if (p) p.hidden = true;
         });
-        if (!isExpanded && panel) {
-            trigger.setAttribute("aria-expanded", "true");
+        if (!wasOpen && panel) {
+            t.setAttribute("aria-expanded", "true");
             panel.hidden = false;
         }
     });
 }
 
 function initNavbarScroll() {
-    const navbar = document.querySelector(".navbar");
-    if (!navbar) return;
-    const handleScroll = () => {
-        if (window.scrollY > 20) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const nav = document.querySelector(".navbar");
+    if (!nav) return;
+    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
 }
 
 function initMobileMenu() {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    const links = document.querySelectorAll(".nav-link");
-    if (!hamburger || !navLinks) return;
-    const toggleMenu = () => {
-        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
-        hamburger.setAttribute("aria-expanded", !isExpanded);
-        hamburger.classList.toggle("active");
-        navLinks.classList.toggle("active");
-        document.body.style.overflow = isExpanded ? "" : "hidden";
-    };
-    const closeMenu = () => {
-        hamburger.setAttribute("aria-expanded", "false");
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
+    const btn = document.querySelector(".hamburger");
+    const menu = document.querySelector(".nav-links");
+    if (!btn || !menu) return;
+    const close = () => {
+        btn.setAttribute("aria-expanded", "false");
+        btn.classList.remove("active");
+        menu.classList.remove("active");
         document.body.style.overflow = "";
     };
-    hamburger.addEventListener("click", toggleMenu);
-    links.forEach(link => link.addEventListener("click", closeMenu));
-    document.addEventListener("keydown", e => {
-        if (e.key === "Escape") closeMenu();
+    btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        btn.classList.toggle("active");
+        menu.classList.toggle("active");
+        document.body.style.overflow = open ? "" : "hidden";
     });
+    menu.querySelectorAll(".nav-link").forEach(l => l.addEventListener("click", close));
+    document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
 }
 
 function initScrollReveal() {
-    const revealElements = document.querySelectorAll(".reveal");
+    const els = document.querySelectorAll(".reveal");
+    if (!els.length) return;
+    const show = el => el.classList.add("reveal-active");
+    // Safety fallback: force-reveal ALL .reveal elements after 1.2s
+    // This guarantees content is always visible regardless of observer state
+    const fallback = setTimeout(() => els.forEach(show), 1200);
     if ("IntersectionObserver" in window) {
-        const observerOptions = { root: null, rootMargin: "0px", threshold: 0.15 };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("reveal-active");
-                    observer.unobserve(entry.target);
+        const obs = new IntersectionObserver((entries, ob) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    show(e.target);
+                    ob.unobserve(e.target);
                 }
             });
-        }, observerOptions);
-        revealElements.forEach(el => observer.observe(el));
+        }, { threshold: 0, rootMargin: "0px 0px -10px 0px" });
+        els.forEach(e => obs.observe(e));
     } else {
-        revealElements.forEach(el => el.classList.add("reveal-active"));
+        clearTimeout(fallback);
+        els.forEach(show);
     }
 }
 
@@ -160,13 +143,9 @@ function initMobileBottomNav() {
     if (!items.length) return;
     const secs = document.querySelectorAll("section[id], footer[id]");
     const onScroll = () => {
-        let c = "";
-        secs.forEach(s => {
-            if (window.scrollY >= s.offsetTop - 140) c = s.getAttribute("id");
-        });
-        items.forEach(i => {
-            i.classList.toggle("active", i.getAttribute("href") === "#" + c);
-        });
+        let cur = "";
+        secs.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+        items.forEach(i => i.classList.toggle("active", i.getAttribute("href") === "#" + cur));
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 }
