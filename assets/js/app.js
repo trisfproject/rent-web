@@ -6,16 +6,16 @@ initFaqAccordion();
 initScrollReveal();
 });
 const BENEFITS_DATA = [
-{icon:'currency',title:'Tanpa Investasi Besar',desc:'Hemat CAPEX. Sewa AC berkualitas tanpa perlu investasi beli unit baru.'},
-{icon:'refresh',title:'Maintenance Berkala',desc:'Pencucian AC berkala otomatis rutin setiap 2-3 bulan sekali gratis.'},
-{icon:'shield',title:'Support Teknis',desc:'Garansi respon cepat teknisi dan penggantian unit cadangan bebas biaya.'},
-{icon:'calendar',title:'Biaya Lebih Terencana',desc:'Pengeluaran OPEX bulanan transparan mencakup risiko kerusakan.'}
+{icon:'currency',title:'Tanpa Investasi Besar',desc:'Hemat CAPEX. Sewa AC tanpa perlu investasi beli unit baru.'},
+{icon:'refresh',title:'Maintenance Berkala',desc:'Pencucian AC berkala dilakukan rutin setiap 2-3 bulan sekali.'},
+{icon:'shield',title:'Support Teknis',desc:'Respon perbaikan teknisi dan penggantian unit cadangan jika diperlukan.'},
+{icon:'calendar',title:'Biaya Terencana',desc:'Pengeluaran OPEX bulanan transparan mencakup risiko kerusakan.'}
 ];
 const WHY_US_DATA = [
-{icon:'wrench',title:'Instalasi Profesional',desc:'Pemasangan rapi dan presisi mengikuti SOP keamanan teknis.'},
-{icon:'badge',title:'Unit Berkualitas',desc:'Unit AC prima hemat energi dari merek global terkemuka.'},
+{icon:'wrench',title:'Instalasi Sesuai SOP',desc:'Pemasangan rapi dan presisi mengikuti standar teknis.'},
+{icon:'badge',title:'Unit AC Terawat',desc:'Unit AC hemat energi dari brand global seperti Gree, Daikin, Panasonic, dan Sharp.'},
 {icon:'wrench',title:'Teknisi Berpengalaman',desc:'Didukung oleh tenaga ahli bersertifikat menguasai perbaikan AC.'},
-{icon:'clock',title:'Fast Response',desc:'Layanan tanggap darurat yang siap melayani keluhan teknis Anda.'},
+{icon:'clock',title:'Respon Cepat',desc:'Layanan tanggap darurat yang siap melayani keluhan teknis Anda.'},
 {icon:'refresh',title:'Maintenance Berkala',desc:'Jadwal perawatan periodik otomatis menjaga suhu udara tetap dingin.'},
 {icon:'arrows',title:'Fleksibel',desc:'Kemudahan penyesuaian sewa (upgrade/downgrade PK) sesuai kebutuhan.'}
 ];
@@ -32,8 +32,8 @@ const WORKFLOW_DATA = [
 {title:'Survey',desc:'Teknisi kami mengunjungi lokasi menentukan letak unit dan jalur pipa.'},
 {title:'Penawaran',desc:'Kami mengirimkan rincian surat penawaran harga sewa resmi.'},
 {title:'Instalasi',desc:'Pemasangan unit AC secara rapi dan aman sesuai standar teknis.'},
-{title:'Maintenance',desc:'Pengecekan freon dan pencucian AC berkala gratis 2-3 bulan sekali.'},
-{title:'Support',desc:'Dukungan respon perbaikan cepat dan ganti unit cadangan gratis.'}
+{title:'Maintenance',desc:'Pengecekan freon dan pencucian AC berkala 2-3 bulan sekali.'},
+{title:'Support',desc:'Dukungan respon perbaikan cepat dan penggantian unit cadangan.'}
 ];
 const GALLERY_DATA = [
 {title:'Ruang Kantor Modern',category:'Komersial',img:'assets/images/hero-office.webp'},
@@ -43,8 +43,8 @@ const GALLERY_DATA = [
 ];
 const FAQ_DATA = [
 {q:'Berapa minimal durasi sewa AC bulanan?',a:'Minimal sewa AC bulanan adalah 1 bulan dengan fleksibilitas perpanjangan kontrak.'},
-{q:'Apakah harga sewa bulanan sudah termasuk perawatan cuci AC?',a:'Ya, seluruh paket mencakup servis dan pencucian AC gratis berkala setiap 2-3 bulan.'},
-{q:'Bagaimana jika terjadi kerusakan unit AC?',a:'Teknisi kami siap merespon cepat dan memberikan penggantian unit cadangan gratis.'},
+{q:'Apakah harga sewa bulanan sudah termasuk perawatan cuci AC?',a:'Ya, seluruh paket mencakup pemeliharaan dan pencucian AC berkala setiap 2-3 bulan.'},
+{q:'Bagaimana jika terjadi kerusakan unit AC?',a:'Teknisi kami siap merespon cepat dan memberikan penggantian unit cadangan jika terjadi kendala.'},
 {q:'Berapa biaya penanganan bongkar pasang unit AC?',a:'Dikenakan sekali di awal: Rp350.000 (0.5-1 PK) dan Rp450.000 (2 PK).'},
 {q:'Berapa lama proses survey dan pengiriman unit ke lokasi?',a:'Tim kami melayani survey lokasi dalam 1x24 jam dan pemasangan dilakukan sesuai jadwal.'},
 {q:'Wilayah mana saja yang dijangkau oleh Sewa AC Cikarang?',a:'Kami melayani area Cikarang, Kabupaten Bekasi, Kota Bekasi, Karawang, hingga Jakarta Timur.'},
