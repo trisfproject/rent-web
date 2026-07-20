@@ -1049,6 +1049,10 @@ a:focus-visible,
   .footer-grid > *:last-child {
     grid-column: span 2;
   }
+
+  .pricing-feature {
+    white-space: nowrap;
+  }
 }
 
 /* Desktop Breakpoint (1024px and up) */
@@ -1187,7 +1191,11 @@ a:focus-visible,
   }
   
   .hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
   }
   
   .nav-links {
@@ -1200,23 +1208,33 @@ a:focus-visible,
     flex-direction: column;
     align-items: flex-start;
     padding: 3rem 2rem;
-    gap: 2rem;
+    gap: 1.5rem;
     transform: translateX(100%);
     transition: transform var(--transition-normal);
     box-shadow: var(--shadow-lg);
     z-index: 999;
   }
   
+  .nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    font-size: 1.1rem;
+  }
+
   .nav-links.active {
     transform: translateX(0);
   }
   
   .nav-cta {
     width: 100%;
+    margin-top: 1rem;
   }
   
   .nav-cta .btn {
     width: 100%;
+    min-height: 44px;
   }
   
   .hamburger.active .hamburger-line:nth-child(1) {
@@ -1249,6 +1267,36 @@ a:focus-visible,
   }
 }
 
+/* Mobile Small Devices (<= 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .cta-banner {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-banner .btn {
+    width: 100%;
+  }
+}
+
 @media (max-width: 390px) {
   .hero-trust-bar {
     flex-direction: column;
@@ -1257,10 +1305,10 @@ a:focus-visible,
   }
   
   .card {
-    padding: 2.5rem 1.75rem;
+    padding: 2.25rem 1.5rem;
   }
   
   .pricing-card {
-    padding: 2.75rem 1.75rem 2rem;
+    padding: 2.25rem 1.5rem 2rem;
   }
 }
