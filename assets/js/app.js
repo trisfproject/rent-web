@@ -49,7 +49,7 @@ const FAQ_DATA = [
     { q: "Berapa lama proses survey dan pengiriman unit ke lokasi?", a: "Tim kami melayani survey lokasi dalam 1x24 jam dan pemasangan dilakukan sesuai jadwal." },
     { q: "Wilayah mana saja yang dijangkau oleh Sewa AC Cikarang?", a: "Kami melayani area Cikarang, Kabupaten Bekasi." },
     { q: "Melayani sewa AC kantor, gudang & proyek?", a: "Ya, melayani rumah, kantor, gudang & proyek." },
-    { q: "Merek unit AC apa saja yang disewakan?", a: "Menyediakan unit AC hemat energi dari brand ternama seperti Gree, Daikin, Panasonic, dan Sharp." },
+    { q: "Merek unit AC apa saja yang disewakan?", a: "Menyediakan unit AC hemat energi dari brand ternama seperti Gree & Daikin." },
     { q: "Apa saja syarat dokumen untuk sewa AC bulanan?", a: "Cukup foto KTP penanggung jawab dan bukti domisili lokasi atau legalitas usaha." },
     { q: "Bagaimana prosedur sistem pembayaran sewa bulanan?", a: "Pembayaran dilakukan bulanan via transfer bank resmi dengan invoice tepat waktu." }
 ];
