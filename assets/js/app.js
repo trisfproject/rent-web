@@ -24,12 +24,12 @@ const WHY_US_DATA = [
 ];
 
 const SERVICES_DATA = [
-    { icon: "house", title: "Rumah Tinggal", desc: "Udara bersih, dingin, dan segar untuk menjaga istirahat keluarga Anda." },
-    { icon: "building-2", title: "Kantor", desc: "Tingkatkan konsentrasi dan produktivitas tim dengan suhu ruang nyaman." },
-    { icon: "warehouse", title: "Gudang", desc: "Jaga kelembapan optimal untuk mutu bahan baku dan inventaris barang." },
-    { icon: "graduation-cap", title: "Sekolah / Kampus", desc: "Ciptakan lingkungan belajar sejuk mendukung fokus para siswa." },
-    { icon: "construction", title: "Site Office / Proyek", desc: "Site office kontainer direksi keet proyek tetap dingin di lapangan." },
-    { icon: "store", title: "Tempat Usaha / Ruko", desc: "Buat pelanggan toko, ruko, cafe, atau butik Anda betah berbelanja." }
+    { icon: "house", title: "Rumah Tinggal", desc: "Hunian &amp; Apartemen" },
+    { icon: "building-2", title: "Kantor", desc: "Perkantoran Modern" },
+    { icon: "warehouse", title: "Gudang", desc: "Warehouse &amp; Logistik" },
+    { icon: "graduation-cap", title: "Sekolah / Kampus", desc: "Sekolah &amp; Kampus" },
+    { icon: "construction", title: "Site Office / Proyek", desc: "Proyek Konstruksi" },
+    { icon: "store", title: "Tempat Usaha / Ruko", desc: "Ruko &amp; Komersial" }
 ];
 
 const WORKFLOW_DATA = [
