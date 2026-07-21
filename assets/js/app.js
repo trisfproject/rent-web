@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BENEFITS_DATA = [
     { icon: "wallet", title: "Tanpa Investasi Besar", desc: "Hemat CAPEX. Sewa AC tanpa perlu investasi beli unit baru." },
-    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Pencucian AC berkala dilakukan rutin setiap 2-3 bulan sekali." },
+    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Pencucian AC berkala dilakukan rutin setiap 3-4 bulan sekali." },
     { icon: "headset", title: "Support Teknis", desc: "Respon perbaikan teknisi dan penggantian unit cadangan jika diperlukan." },
     { icon: "calendar-clock", title: "Biaya Terencana", desc: "Pengeluaran OPEX bulanan transparan mencakup risiko kerusakan." }
 ];
