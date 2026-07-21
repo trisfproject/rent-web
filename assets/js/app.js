@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BENEFITS_DATA = [
     { icon: "wallet", title: "Tanpa Investasi Besar", desc: "Hemat CAPEX. Sewa AC tanpa perlu investasi beli unit baru." },
-    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Pencucian AC berkala dilakukan rutin setiap 3-4 bulan sekali." },
+    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Maintenance berkala dilakukan setiap 3–4 bulan untuk menjaga performa dan efisiensi AC tetap optimal." },
     { icon: "headset", title: "Support Teknis", desc: "Respon perbaikan teknisi dan penggantian unit cadangan jika diperlukan." },
     { icon: "calendar-clock", title: "Biaya Terencana", desc: "Pengeluaran OPEX bulanan transparan mencakup risiko kerusakan." }
 ];
@@ -37,13 +37,13 @@ const WORKFLOW_DATA = [
     { title: "Survey", desc: "Teknisi kami mengunjungi lokasi menentukan letak unit dan jalur pipa." },
     { title: "Penawaran", desc: "Kami mengirimkan rincian surat penawaran harga sewa resmi." },
     { title: "Instalasi", desc: "Pemasangan unit AC secara rapi dan aman sesuai standar teknis." },
-    { title: "Maintenance", desc: "Pengecekan freon dan pencucian AC berkala 3-4 bulan sekali." },
+    { title: "Maintenance", desc: "Maintenance berkala setiap 3–4 bulan." },
     { title: "Support", desc: "Dukungan respon perbaikan cepat dan penggantian unit cadangan." }
 ];
 
 const FAQ_DATA = [
-    { q: "Berapa minimal durasi sewa AC bulanan?", a: "Minimal sewa AC bulanan adalah 1 tahun." },
-    { q: "Apakah harga sewa bulanan sudah termasuk perawatan cuci AC?", a: "Ya, seluruh paket mencakup pemeliharaan dan pencucian AC berkala setiap 3-4 bulan." },
+    { q: "Berapa minimal durasi sewa AC bulanan?", a: "Minimal sewa AC bulanan adalah 12 bulan." },
+    { q: "Apakah harga sewa bulanan sudah termasuk perawatan cuci AC?", a: "Ya, seluruh paket mencakup maintenance berkala dilakukan setiap 3–4 bulan untuk menjaga performa dan efisiensi AC tetap optimal." },
     { q: "Bagaimana jika terjadi kerusakan unit AC?", a: "Teknisi kami siap merespon cepat dan memberikan penggantian unit cadangan jika terjadi kendala." },
     { q: "Berapa biaya penanganan bongkar pasang unit AC?", a: "Dikenakan sekali di awal: Rp350.000 (0.5-1 PK) dan Rp450.000 (2 PK)." },
     { q: "Berapa lama proses survey dan pengiriman unit ke lokasi?", a: "Tim kami melayani survey lokasi dalam 1x24 jam dan pemasangan dilakukan sesuai jadwal." },
