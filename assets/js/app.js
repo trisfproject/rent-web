@@ -8,45 +8,45 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const BENEFITS_DATA = [
-    { icon: "wallet", title: "Tanpa Investasi Besar", desc: "Hemat CAPEX. Sewa AC tanpa perlu investasi beli unit baru." },
-    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Maintenance berkala dilakukan setiap 3–4 bulan untuk menjaga performa dan efisiensi AC tetap optimal." },
-    { icon: "headset", title: "Support Teknis", desc: "Respon perbaikan teknisi dan penggantian unit cadangan jika diperlukan." },
-    { icon: "calendar-clock", title: "Biaya Terencana", desc: "Pengeluaran OPEX bulanan transparan mencakup risiko kerusakan." }
+    { icon: "wallet", title: "Tanpa Investasi Besar", desc: "Hemat CAPEX. Sewa AC tanpa perlu membeli unit baru." },
+    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Maintenance berkala setiap 3–4 bulan menjaga performa AC tetap optimal." },
+    { icon: "headset", title: "Dukungan Teknis", desc: "Layanan perbaikan cepat dan unit cadangan jika terjadi kendala." },
+    { icon: "calendar-clock", title: "Biaya Terencana", desc: "Pengeluaran OPEX bulanan transparan tanpa biaya tambahan." }
 ];
 
 const WHY_US_DATA = [
-    { icon: "shield-check", title: "Instalasi Sesuai SOP", desc: "Pemasangan rapi dan presisi mengikuti standar teknis." },
+    { icon: "shield-check", title: "Instalasi Sesuai SOP", desc: "Instalasi rapi dan aman sesuai standar teknis." },
     { icon: "badge-check", title: "Unit AC Terawat", desc: "Unit AC hemat energi dari brand global seperti Daikin dan Gree." },
-    { icon: "hard-hat", title: "Teknisi Berpengalaman", desc: "Didukung oleh tenaga ahli bersertifikat menguasai perbaikan AC." },
-    { icon: "clock", title: "Respon Cepat", desc: "Layanan tanggap darurat yang siap melayani keluhan teknis Anda." },
-    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Jadwal perawatan periodik otomatis menjaga suhu udara tetap dingin." },
-    { icon: "arrow-left-right", title: "Fleksibel", desc: "Kemudahan penyesuaian sewa (upgrade/downgrade PK) sesuai kebutuhan." }
+    { icon: "hard-hat", title: "Teknisi Berpengalaman", desc: "Teknisi berpengalaman dan bersertifikasi resmi." },
+    { icon: "clock", title: "Respon Cepat", desc: "Dukungan darurat dan respon cepat untuk kendala AC." },
+    { icon: "refresh-cw", title: "Maintenance Berkala", desc: "Maintenance berkala otomatis menjaga performa AC tetap dingin." },
+    { icon: "arrow-left-right", title: "Fleksibel", desc: "Kemudahan penyesuaian sewa PK sesuai kebutuhan." }
 ];
 
 const SERVICES_DATA = [
     { icon: "house", title: "Rumah Tinggal", desc: "Hunian &amp; Apartemen" },
     { icon: "building-2", title: "Kantor", desc: "Perkantoran Modern" },
     { icon: "warehouse", title: "Gudang", desc: "Warehouse &amp; Logistik" },
-    { icon: "graduation-cap", title: "Sekolah / Kampus", desc: "Sekolah &amp; Kampus" },
-    { icon: "construction", title: "Site Office / Proyek", desc: "Proyek Konstruksi" },
-    { icon: "store", title: "Tempat Usaha / Ruko", desc: "Ruko &amp; Komersial" }
+    { icon: "graduation-cap", title: "Sekolah", desc: "Sekolah &amp; Kampus" },
+    { icon: "construction", title: "Site Office", desc: "Proyek Konstruksi" },
+    { icon: "store", title: "Tempat Usaha", desc: "Ruko &amp; Komersial" }
 ];
 
 const WORKFLOW_DATA = [
-    { title: "Konsultasi", desc: "Hubungi tim kami untuk konsultasi kapasitas AC (PK) yang sesuai." },
-    { title: "Survey", desc: "Teknisi kami mengunjungi lokasi menentukan letak unit dan jalur pipa." },
-    { title: "Penawaran", desc: "Kami mengirimkan rincian surat penawaran harga sewa resmi." },
-    { title: "Instalasi", desc: "Pemasangan unit AC secara rapi dan aman sesuai standar teknis." },
+    { title: "Konsultasi", desc: "Hubungi kami untuk konsultasi kapasitas AC yang sesuai." },
+    { title: "Survei", desc: "Survei lokasi untuk menentukan posisi unit dan pipa." },
+    { title: "Penawaran", desc: "Pengiriman penawaran harga sewa resmi." },
+    { title: "Instalasi", desc: "Instalasi AC rapi dan aman oleh teknisi." },
     { title: "Maintenance", desc: "Maintenance berkala setiap 3–4 bulan." },
-    { title: "Support", desc: "Dukungan respon perbaikan cepat dan penggantian unit cadangan." }
+    { title: "Support", desc: "Dukungan teknis cepat dan unit cadangan siap pakai." }
 ];
 
 const FAQ_DATA = [
     { q: "Berapa minimal durasi sewa AC bulanan?", a: "Minimal sewa AC bulanan adalah 12 bulan." },
-    { q: "Apakah harga sewa bulanan sudah termasuk perawatan cuci AC?", a: "Ya, seluruh paket mencakup maintenance berkala dilakukan setiap 3–4 bulan untuk menjaga performa dan efisiensi AC tetap optimal." },
+    { q: "Apakah harga sewa bulanan sudah termasuk maintenance berkala?", a: "Ya, seluruh paket mencakup maintenance berkala setiap 3–4 bulan untuk menjaga performa AC tetap optimal." },
     { q: "Bagaimana jika terjadi kerusakan unit AC?", a: "Teknisi kami siap merespon cepat dan memberikan penggantian unit cadangan jika terjadi kendala." },
-    { q: "Berapa biaya penanganan bongkar pasang unit AC?", a: "Dikenakan sekali di awal: Rp350.000 (0.5-1 PK) dan Rp450.000 (2 PK)." },
-    { q: "Berapa lama proses survey dan pengiriman unit ke lokasi?", a: "Tim kami melayani survey lokasi dalam 1x24 jam dan pemasangan dilakukan sesuai jadwal." },
+    { q: "Berapa biaya instalasi sewa AC?", a: "Biaya instalasi dikenakan sekali di awal: Rp350.000 untuk AC 0.5–1 PK dan Rp450.000 untuk AC 2 PK." },
+    { q: "Berapa lama proses survei dan pengiriman unit ke lokasi?", a: "Tim kami melayani survei lokasi dalam 1x24 jam dan pemasangan dilakukan sesuai jadwal." },
     { q: "Wilayah mana saja yang dijangkau oleh Sewa AC Cikarang?", a: "Kami melayani area Cikarang, Kabupaten Bekasi." },
     { q: "Melayani sewa AC kantor, gudang & proyek?", a: "Ya, melayani rumah, kantor, gudang & proyek." },
     { q: "Merek unit AC apa saja yang disewakan?", a: "Menyediakan unit AC hemat energi dari brand ternama seperti Gree & Daikin." },
