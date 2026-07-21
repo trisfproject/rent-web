@@ -55,13 +55,13 @@ const FAQ_DATA = [
 ];
 
 function renderPageContent() {
-    const mkCard = (i, w) => `<div class="card" tabindex="0"><div class="card-icon-box" aria-hidden="true"><svg width="${w}" height="${w}"><use href="#icon-${i.icon}"/></svg></div><h3 class="card-title">${i.title}</h3><p class="card-desc">${i.desc}</p></div>`;
+    const mkCard = (i, w) => `<div class="card" tabindex="0" role="listitem"><div class="card-icon-box" aria-hidden="true"><svg width="${w}" height="${w}"><use href="#icon-${i.icon}"/></svg></div><h3 class="card-title">${i.title}</h3><p class="card-desc">${i.desc}</p></div>`;
     const fill = (id, data, w) => { const el = document.getElementById(id); if (el) el.innerHTML = data.map(i => mkCard(i, w)).join(""); };
     fill("benefits-grid", BENEFITS_DATA, 24);
     fill("why-grid", WHY_US_DATA, 22);
     fill("services-grid", SERVICES_DATA, 24);
     const tg = document.getElementById("timeline-grid");
-    if (tg) tg.innerHTML = WORKFLOW_DATA.map((i, n) => `<div class="timeline-step"><div class="timeline-number" aria-label="Langkah ${n + 1}">${n + 1}</div><div class="timeline-content"><h3 class="timeline-title">${i.title}</h3><p class="timeline-desc">${i.desc}</p></div></div>`).join("");
+    if (tg) tg.innerHTML = WORKFLOW_DATA.map((i, n) => `<div class="timeline-step" role="listitem"><div class="timeline-number" aria-label="Langkah ${n + 1}">${n + 1}</div><div class="timeline-content"><h3 class="timeline-title">${i.title}</h3><p class="timeline-desc">${i.desc}</p></div></div>`).join("");
     const fq = document.getElementById("faq-accordion");
     if (fq) fq.innerHTML = FAQ_DATA.map((i, n) => `<div class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-${n}" id="faq-head-${n}"><span>${i.q}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="faq-panel" id="faq-ans-${n}" aria-labelledby="faq-head-${n}" hidden><div class="faq-content"><p>${i.a}</p></div></div></div>`).join("");
 }
@@ -145,7 +145,11 @@ function initMobileBottomNav() {
     const onScroll = () => {
         let cur = "";
         secs.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
-        items.forEach(i => i.classList.toggle("active", i.getAttribute("href") === "#" + cur));
+        items.forEach(i => {
+            const href = i.getAttribute("href");
+            const isActive = (href === "#" + cur) || (cur === "contact" && href === "#cta");
+            i.classList.toggle("active", isActive);
+        });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 }

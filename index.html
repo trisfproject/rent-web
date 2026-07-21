@@ -54,6 +54,10 @@
   <!-- Font Preconnect (FCP optimization) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="favicon.ico">
 
   <!-- Hero LCP image preload -->
   <link rel="preload" href="assets/images/hero-office.webp" as="image" type="image/webp">
@@ -668,7 +672,7 @@
           <p class="section-subtitle">Alur kerja sistematis kami dari awal konsultasi hingga layanan dukungan teknis
             rutin AC Anda.</p>
         </div>
-        <div class="timeline-grid" id="timeline-grid" aria-label="Langkah-langkah proses sewa AC"></div>
+        <div class="timeline-grid" id="timeline-grid" role="list" aria-label="Langkah-langkah proses sewa AC"></div>
       </div>
     </section>
 
@@ -743,8 +747,8 @@
           <div class="footer-nav-title" id="map-label">Lokasi Kami</div>
           <div class="map-placeholder" role="button" tabindex="0"
             aria-label="Lihat lokasi Sewa AC Cikarang di Google Maps" aria-describedby="map-label"
-            onclick="window.open('https://maps.google.com/?q=Ruko+Pasar+Bersih+Pilar+Cikarang+Bekasi', '_blank')"
-            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://maps.google.com/?q=Ruko+Pasar+Bersih+Pilar+Cikarang+Bekasi','_blank')}">
+            onclick="window.open('https://maps.google.com/?q=Ruko+Pasar+Bersih+Pilar+Cikarang+Bekasi', '_blank', 'noopener,noreferrer')"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://maps.google.com/?q=Ruko+Pasar+Bersih+Pilar+Cikarang+Bekasi','_blank', 'noopener,noreferrer')}">
             <svg width="32" height="32" aria-hidden="true" focusable="false">
               <use href="#icon-map-pin" />
             </svg>
