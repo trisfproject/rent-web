@@ -1,16 +1,20 @@
 {
-  "name": "Sewa AC Cikarang",
+  "name": "Sewa AC Cikarang — Rental AC Bulanan",
   "short_name": "Sewa AC",
-  "description": "Solusi Sewa AC Bulanan untuk Rumah, Kantor, Gudang & Proyek di Cikarang.",
-  "start_url": ".",
+  "description": "Sewa AC bulanan di Cikarang & Bekasi mulai Rp180.000/bulan. Termasuk instalasi dan maintenance berkala.",
+  "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#FFFFFF",
-  "theme_color": "#0055A5",
+  "theme_color": "#1698F5",
+  "lang": "id",
+  "categories": ["business", "utilities"],
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "32x32",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any"
     }
   ]
 }
