@@ -37,7 +37,7 @@ const WORKFLOW_DATA = [
     { title: "Survey", desc: "Teknisi kami mengunjungi lokasi menentukan letak unit dan jalur pipa." },
     { title: "Penawaran", desc: "Kami mengirimkan rincian surat penawaran harga sewa resmi." },
     { title: "Instalasi", desc: "Pemasangan unit AC secara rapi dan aman sesuai standar teknis." },
-    { title: "Maintenance", desc: "Pengecekan freon dan pencucian AC berkala 2-3 bulan sekali." },
+    { title: "Maintenance", desc: "Pengecekan freon dan pencucian AC berkala 3-4 bulan sekali." },
     { title: "Support", desc: "Dukungan respon perbaikan cepat dan penggantian unit cadangan." }
 ];
 
