@@ -161,9 +161,11 @@ const SALES_CONTACTS = {
 };
 
 function initSalesContacts() {
-    // Populate direct CTA links on page load
+    // Populate direct CTA & Footer links on page load
     const directGaluh = document.getElementById("cta-sales-galuh");
     const directRaaf = document.getElementById("cta-sales-raaf");
+    const footerGaluh = document.getElementById("footer-sales-galuh");
+    const footerRaaf = document.getElementById("footer-sales-raaf");
     const defaultMsg = "Assalamu'alaikum, Sewa AC Cikarang. Saya ingin konsultasi mengenai kebutuhan sewa AC.";
     
     if (directGaluh) {
@@ -171,6 +173,12 @@ function initSalesContacts() {
     }
     if (directRaaf) {
         directRaaf.href = `https://wa.me/${SALES_CONTACTS.raaf.phone}?text=${encodeURIComponent(defaultMsg)}`;
+    }
+    if (footerGaluh) {
+        footerGaluh.href = `https://wa.me/${SALES_CONTACTS.galuh.phone}?text=${encodeURIComponent(defaultMsg)}`;
+    }
+    if (footerRaaf) {
+        footerRaaf.href = `https://wa.me/${SALES_CONTACTS.raaf.phone}?text=${encodeURIComponent(defaultMsg)}`;
     }
 
     // Modal elements
