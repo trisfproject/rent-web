@@ -1531,3 +1531,13 @@ body {
     width:100%
   }
 }
+
+.footer-credit-link {
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:inherit;
+  transition:color var(--transition-fast)
+}
+.footer-credit-link:hover {
+  color:var(--primary-hover)
+}
