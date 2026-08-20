@@ -38,7 +38,7 @@ const WORKFLOW_DATA = [
     { title: "Survei", desc: "Survei lokasi untuk menentukan posisi unit dan pipa." },
     { title: "Penawaran", desc: "Pengiriman penawaran harga sewa resmi." },
     { title: "Instalasi", desc: "Instalasi AC rapi dan aman oleh teknisi." },
-    { title: "Tanda Tangan Kontrak", desc: "Penandatanganan kontrak sewa setelah instalasi selesai." },
+    { title: "Kontrak Sewa", desc: "Finalisasi dan penandatanganan kontrak sewa." },
     { title: "Maintenance", desc: "Perawatan berkala gratis hingga 3x selama 1 tahun." },
     { title: "Support", desc: "Dukungan teknis cepat dan unit cadangan siap pakai." }
 ];
