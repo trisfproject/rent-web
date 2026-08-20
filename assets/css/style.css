@@ -1036,7 +1036,7 @@ button:focus-visible,a:focus-visible,.card:focus-visible,.map-placeholder:focus-
   max-width:100%
 }
 .timeline-grid {
-  grid-template-columns:repeat(6,1fr);
+  grid-template-columns:repeat(7,1fr);
   gap:2rem
 }
 .timeline-grid::before {
