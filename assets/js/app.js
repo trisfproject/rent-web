@@ -164,7 +164,7 @@ function initSalesContacts() {
     // Populate direct CTA links on page load
     const directGaluh = document.getElementById("cta-sales-galuh");
     const directRaaf = document.getElementById("cta-sales-raaf");
-    const defaultMsg = "Halo Sewa AC Cikarang, saya ingin konsultasi sewa AC";
+    const defaultMsg = "Assalamu'alaikum, Sewa AC Cikarang. Saya ingin konsultasi mengenai kebutuhan sewa AC.";
     
     if (directGaluh) {
         directGaluh.href = `https://wa.me/${SALES_CONTACTS.galuh.phone}?text=${encodeURIComponent(defaultMsg)}`;
