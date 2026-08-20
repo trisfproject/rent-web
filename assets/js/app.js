@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initFaqAccordion();
     initScrollReveal();
     initMobileBottomNav();
+    initSalesContacts();
 });
 
 const BENEFITS_DATA = [
@@ -152,4 +153,63 @@ function initMobileBottomNav() {
         });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+const SALES_CONTACTS = {
+    galuh: { name: "Galuh", phone: "6285282979585" },
+    raaf: { name: "Ra'af", phone: "6289512431214" }
+};
+
+function initSalesContacts() {
+    // Populate direct CTA links on page load
+    const directGaluh = document.getElementById("cta-sales-galuh");
+    const directRaaf = document.getElementById("cta-sales-raaf");
+    const defaultMsg = "Halo Sewa AC Cikarang, saya ingin konsultasi sewa AC";
+    
+    if (directGaluh) {
+        directGaluh.href = `https://wa.me/${SALES_CONTACTS.galuh.phone}?text=${encodeURIComponent(defaultMsg)}`;
+    }
+    if (directRaaf) {
+        directRaaf.href = `https://wa.me/${SALES_CONTACTS.raaf.phone}?text=${encodeURIComponent(defaultMsg)}`;
+    }
+
+    // Modal elements
+    const modal = document.getElementById("sales-modal");
+    if (!modal) return;
+    const overlay = modal.querySelector(".sales-modal-overlay");
+    const closeBtn = modal.querySelector(".sales-modal-close");
+    const optGaluh = document.getElementById("sales-opt-galuh");
+    const optRaaf = document.getElementById("sales-opt-raaf");
+
+    const openModal = (message) => {
+        if (optGaluh) optGaluh.href = `https://wa.me/${SALES_CONTACTS.galuh.phone}?text=${encodeURIComponent(message)}`;
+        if (optRaaf) optRaaf.href = `https://wa.me/${SALES_CONTACTS.raaf.phone}?text=${encodeURIComponent(message)}`;
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        // Focus first option for accessibility
+        if (optGaluh) optGaluh.focus();
+    };
+
+    const closeModal = () => {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+    };
+
+    // Close handlers
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (overlay) overlay.addEventListener("click", closeModal);
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+        }
+    });
+
+    // Delegate click events on triggers
+    document.body.addEventListener("click", (e) => {
+        const trigger = e.target.closest(".js-wa-trigger");
+        if (!trigger) return;
+        e.preventDefault();
+        const msg = trigger.getAttribute("data-message") || defaultMsg;
+        openModal(msg);
+    });
 }
