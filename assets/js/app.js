@@ -156,21 +156,21 @@ function initMobileBottomNav() {
 }
 
 const SALES_CONTACTS = {
-    galuh: { name: "Galuh", phone: "6285282979585" },
-    raaf: { name: "Ra'af", phone: "6289512431214" }
+    galuh: { name: "Sales Galuh", phone: "6285282979585" },
+    via: { name: "Sales Via", phone: "6289512431214" }
 };
 
 function initSalesContacts() {
     // Populate direct CTA links on page load
     const directGaluh = document.getElementById("cta-sales-galuh");
-    const directRaaf = document.getElementById("cta-sales-raaf");
+    const directVia = document.getElementById("cta-sales-via");
     const defaultMsg = "Assalamu'alaikum, Sewa AC Cikarang. Saya ingin konsultasi mengenai kebutuhan sewa AC.";
     
     if (directGaluh) {
         directGaluh.href = `https://wa.me/${SALES_CONTACTS.galuh.phone}?text=${encodeURIComponent(defaultMsg)}`;
     }
-    if (directRaaf) {
-        directRaaf.href = `https://wa.me/${SALES_CONTACTS.raaf.phone}?text=${encodeURIComponent(defaultMsg)}`;
+    if (directVia) {
+        directVia.href = `https://wa.me/${SALES_CONTACTS.via.phone}?text=${encodeURIComponent(defaultMsg)}`;
     }
 
     // Modal elements
@@ -179,11 +179,11 @@ function initSalesContacts() {
     const overlay = modal.querySelector(".sales-modal-overlay");
     const closeBtn = modal.querySelector(".sales-modal-close");
     const optGaluh = document.getElementById("sales-opt-galuh");
-    const optRaaf = document.getElementById("sales-opt-raaf");
+    const optVia = document.getElementById("sales-opt-via");
 
     const openModal = (message) => {
         if (optGaluh) optGaluh.href = `https://wa.me/${SALES_CONTACTS.galuh.phone}?text=${encodeURIComponent(message)}`;
-        if (optRaaf) optRaaf.href = `https://wa.me/${SALES_CONTACTS.raaf.phone}?text=${encodeURIComponent(message)}`;
+        if (optVia) optVia.href = `https://wa.me/${SALES_CONTACTS.via.phone}?text=${encodeURIComponent(message)}`;
         modal.classList.add("active");
         modal.setAttribute("aria-hidden", "false");
         // Focus first option for accessibility
